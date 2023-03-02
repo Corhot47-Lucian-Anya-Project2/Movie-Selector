@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1c6f372d11.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/styles.css">
     <title>Movie Selector</title>
 </head>
+
 <body>
-    
+    <!-- header section -->
+    <header>
+        <div class="wrapper">
+            <h1>Movie Selector</h1>
+        </div>
+    </header>
+    <!-- main section -->
+    <main>
+        <!-- wrapper -->
+        <div class="wapper flexContainer">
+            <!-- image display -->
+            <section class="movieDisplay">
+                <!-- container to hold the image -->
+                <div class="imageContainer">
+                </div>
+
+                <!-- container to hold the buttons the user clicks -->
+                <div class="buttonContainer">
+                    <!-- dislike button -->
+                    <button class="dislike">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+
+                    <!-- undo button -->
+                    <!-- <button class="undo">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </button> -->
+
+                    <!-- like button -->
+                    <button class="like">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </div>
+            </section>
+            <!-- favourites list -->
+            <section class="favourites">
+                <h2>Liked Movies</h2>
+                <ul id=“likedMovies”>
+                
+                </ul>
+            </section> <!-- .favourites ends -->
+        </div> <!-- .wrapper ends -->
+    </main>
+    <!-- footer section -->
+    <footer>
+        <div class="wrapper">
+            <p>Created by Anya & Lucian © 2023</p>
+        </div>
+    </footer>
 </body>
+
 </html>

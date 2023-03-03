@@ -5,8 +5,10 @@ html {
 
 body {
     font-family: $bodyFont;
+    color: $blackShade;
 }
 
 h1 {
     text-align: center;
+    padding: 20px, 0;
 }

@@ -1,13 +1,29 @@
 // header styles
 header {
-
+    
 }
 
 // sections styles
+section {
+    display: flex;
+}
 
 // movie display section
+.movieDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 // favourite list section
+.favourites {
+    background-color: $secondary;
+    position: absolute;
+    padding: 20px;
+    top: 40px;
+    right: 40px
+}
 
 
 // footer styles

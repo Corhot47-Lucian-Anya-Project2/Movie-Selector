@@ -6,3 +6,19 @@
     max-width: 1080px;
     margin: 0 auto;
 }
+
+body {
+    background-color: $whiteShade;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+// removing base ul styles
+
+ul {
+    padding: 0;
+    margin: 0;
+}

@@ -18,13 +18,11 @@ section {
 
 // favourite list section
 .favourites {
-    display: flex;
-    flex-direction: column;
     background-color: $secondary;
     position: absolute;
     padding: 20px;
     top: 40px;
-    right: 40px
+    right: 40px;
 }
 
 

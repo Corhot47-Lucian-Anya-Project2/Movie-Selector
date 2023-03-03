@@ -28,7 +28,7 @@ function displayRandomMovie() {
 
       // Check if there are any movies left to show
       if (unshownMovies.length === 0) {
-        alert('You have seen all the top rated movies!');
+        alert('You have seen all the movies!');
         return;
       }
 

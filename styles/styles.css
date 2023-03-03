@@ -220,3 +220,71 @@ template {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+html {
+  font-size: 125%;
+}
+
+body {
+  font-family: "Golos Text", sans-serif;
+  color: #2c2c2c;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px, 0;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #f0efed;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movieDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.favourites {
+  background-color: #bacdb0;
+  position: absolute;
+  padding: 20px;
+  top: 40px;
+  right: 40px;
+}
+
+footer p {
+  text-align: center;
+}

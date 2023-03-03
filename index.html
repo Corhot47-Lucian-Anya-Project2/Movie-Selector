@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Tilt+Warp&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
     <title>Movie Selector</title>
 </head>
 
@@ -24,11 +24,12 @@
     <!-- main section -->
     <main>
         <!-- wrapper -->
-        <div class="wapper flexContainer">
+        <div class="wrapper">
             <!-- image display -->
-            <section class="movieDisplay">
+            <section class="movieDisplay flexContainer">
                 <!-- container to hold the image -->
                 <div class="imageContainer">
+                    <img src="http://placekitten.com/200/300" alt="kitten">
                 </div>
                 <p class="movieName"></p>
 
@@ -48,13 +49,12 @@
                     <button class="like">
                         <i class="fa-solid fa-heart"></i>
                     </button>
-                </div>
+                </div> <!-- .buttonContainer ends -->
             </section>
             <!-- favourites list -->
-            <section class="favourites">
+            <section class="favourites flexContainer">
                 <h2>Liked Movies</h2>
                 <ul id=“likedMovies”>
-                
                 </ul>
             </section> <!-- .favourites ends -->
         </div> <!-- .wrapper ends -->

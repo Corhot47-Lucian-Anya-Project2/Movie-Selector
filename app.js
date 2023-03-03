@@ -17,22 +17,31 @@ const shownMovies = [];
 function displayRandomMovie() {
   // Call the API to get the list of top rated movies
   fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=a86709241fa3002625b118e87d177b48')
-    .then(response => response.json())
-    .then(data => {
-      // Get a random movie from the list of top rated movies that has not been shown before
-      let randomMovie = null;
-      while (!randomMovie) {
-        const randomIndex = Math.floor(Math.random() * data.results.length);
-        const movie = data.results[randomIndex];
-        if (!shownMovies.includes(movie.title)) {
-          randomMovie = movie;
-          shownMovies.push(movie.title);
-        }
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      // Filter out the movies that have already been shown
+      const unshownMovies = data.results.filter(function(movie) {
+        return !shownMovies.includes(movie.title);
+      });
+
+      // Check if there are any movies left to show
+      if (unshownMovies.length === 0) {
+        alert('You have seen all the top rated movies!');
+        return;
       }
 
-      // Update the movie name and image elements with the new movie data
+      // Get a random movie from the list of unshown movies
+      const randomIndex = Math.floor(Math.random() * unshownMovies.length);
+      const randomMovie = unshownMovies[randomIndex];
+
+      // Add the movie to the list of shown movies
+      shownMovies.push(randomMovie.title);
+
+      // Display the random movie
       movieNameEl.textContent = randomMovie.title;
-      imageContainerEl.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${randomMovie.poster_path}" alt="${randomMovie.title}">`;
+      imageContainerEl.innerHTML = '<img src="https://image.tmdb.org/t/p/w500' + randomMovie.poster_path + '" alt="' + randomMovie.title + '">';
     });
 }
 

@@ -27,6 +27,7 @@ function displayRandomMovie() {
         if (!shownMovies.includes(movie.title)) {
           randomMovie = movie;
           shownMovies.push(movie.title);
+          break;
         }
       }
 

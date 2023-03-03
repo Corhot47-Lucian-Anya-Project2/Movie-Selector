@@ -11,14 +11,14 @@ likeBtn.addEventListener('click', handleLikeButtonClick);
 displayRandomMovie();
 // Define a function to display a random movie
 function displayRandomMovie() {
-  // Call the API to get the list of top rated movies
+  // Call the API to get the list of movies
   fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=a86709241fa3002625b118e87d177b48')
     .then(response => {
       // Convert the response data to JSON
       return response.json();
     })
     .then(data => {
-      // Get a random movie from the list of top rated movies
+      // Get a random movie from the list of movies
       const randomIndex = Math.floor(Math.random() * data.results.length);
       const randomMovie = data.results[randomIndex];
       // Update the movie name and image elements with the new movie data

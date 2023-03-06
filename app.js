@@ -39,11 +39,14 @@ function displayRandomMovie() {
       // Add the movie to the list of shown movies
       shownMovies.push(randomMovie.title);
 
-      // Display the random movie
+      // Display the random movie poster and name
+      const movieNameEl = document.querySelector('.movieName');
+      const imageContainerEl = document.querySelector('.imageContainer');
       movieNameEl.textContent = randomMovie.title;
       imageContainerEl.innerHTML = '<img src="https://image.tmdb.org/t/p/w500' + randomMovie.poster_path + '" alt="' + randomMovie.title + '">';
     });
 }
+
 
 
 

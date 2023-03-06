@@ -48,3 +48,7 @@ function handleLikeButtonClick() {
   displayRandomMovie();
 }
 
+
+
+
+

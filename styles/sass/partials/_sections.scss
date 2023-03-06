@@ -5,12 +5,6 @@ body {
     padding: 0;
 }
 
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .flexContainer {
     display: flex;
     flex-wrap: wrap;
@@ -18,11 +12,16 @@ body {
     align-items: center;
 }
 
-/* Header styles */
-header {
-    background-color: #222;
-    color: #fff;
+// favourite list section
+.favourites {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: $secondary;
+    position: absolute;
     padding: 20px;
+    top: 40px;
+    right: 40px;
 }
 
 h1 {
@@ -87,11 +86,6 @@ main {
 
 .favourites {
     margin: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    background-color: $secondary;
-    position: absolute;
     padding: 20px;
     background-color: #fff;
     text-align: center;
@@ -108,8 +102,6 @@ h2 {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    top: 40px;
-    right: 40px;
 }
 
 #likedMovies li {

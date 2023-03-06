@@ -16,7 +16,7 @@ const shownMovies = [];
 // Define a function to display a random movie
 function displayRandomMovie() {
   // Call the API to get the list of top rated movies
-  fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=a86709241fa3002625b118e87d177b48')
+  fetch('https://api.themoviedb.org/3/discover/movie?api_key=a86709241fa3002625b118e87d177b48')
     .then(function(response) {
       return response.json();
     })

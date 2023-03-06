@@ -1,37 +1,130 @@
-// header styles
-header {
-    
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-// sections styles
-section {
-    display: flex;
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-// movie display section
-.movieDisplay {
+.flexContainer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-// favourite list section
+/* Header styles */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+/* Main styles */
+main {
+    background-color: #eee;
+    padding: 20px;
+}
+
+.movieDisplay {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.imageContainer img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    // margin-top: 20px;
+}
+
+.buttonContainer button {
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.buttonContainer button i {
+    font-size: 2rem;
+}
+
+.dislike,
+.like {
+    background-color: #eee;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dislike:hover,
+.like:hover {
+    background-color: #ddd;
+}
+
+.fa-x,
+.fa-heart {
+    font-size: 24px;
+}
+
 .favourites {
+    margin: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     background-color: $secondary;
     position: absolute;
     padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    flex-basis: 300px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+#likedMovies {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     top: 40px;
     right: 40px;
 }
 
+#likedMovies li {
+    margin: 10px 0;
+    font-size: 18px;
+}
 
-// footer styles
+/* Footer styles */
 footer {
-    p {
-        text-align: center;
-    }
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+p {
+    margin: 0;
 }

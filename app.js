@@ -16,7 +16,7 @@ const shownMovies = [];
 // Define a function to display a random movie
 function displayRandomMovie() {
   // Call the API to get the list of top rated movies
-  fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=a86709241fa3002625b118e87d177b48')
+  fetch('https://api.themoviedb.org/3/movie/popular?api_key=a86709241fa3002625b118e87d177b48&page=10')
     .then(function(response) {
       return response.json();
     })
@@ -39,11 +39,14 @@ function displayRandomMovie() {
       // Add the movie to the list of shown movies
       shownMovies.push(randomMovie.title);
 
-      // Display the random movie
+      // Display the random movie poster and name
+      const movieNameEl = document.querySelector('.movieName');
+      const imageContainerEl = document.querySelector('.imageContainer');
       movieNameEl.textContent = randomMovie.title;
       imageContainerEl.innerHTML = '<img src="https://image.tmdb.org/t/p/w500' + randomMovie.poster_path + '" alt="' + randomMovie.title + '">';
     });
 }
+
 
 
 
@@ -81,10 +84,18 @@ function handleDislikeButtonClick() {
 function handleLikeButtonClick() {
   // Get the current movie name
   const movieName = movieNameEl.textContent;
+  
+  // Check if the number of liked movies is already 15
+  if (likedMoviesList.children.length >= 15) {
+    alert('You can only have up to 15 liked movies!');
+    return;
+  }
+
   // Create a new list item with the movie name and append it to the list of liked movies
   const newListItem = document.createElement('li');
   newListItem.textContent = movieName;
   likedMoviesList.appendChild(newListItem);
+  
   // Display a new random movie
   displayRandomMovie();
 }

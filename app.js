@@ -43,7 +43,7 @@ function displayRandomMovie() {
       const movieNameEl = document.querySelector('.movieName');
       const imageContainerEl = document.querySelector('.imageContainer');
       movieNameEl.textContent = randomMovie.title;
-      imageContainerEl.innerHTML = '<img src="https://image.tmdb.org/t/p/w500' + randomMovie.poster_path + '" alt="' + randomMovie.title + '">';
+      imageContainerEl.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${randomMovie.poster_path}" alt="${randomMovie.title}">`;
     });
 }
 

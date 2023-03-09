@@ -12,18 +12,6 @@ body {
     align-items: center;
 }
 
-// favourite list section
-.favourites {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    background-color: $secondary;
-    position: absolute;
-    padding: 20px;
-    top: 40px;
-    right: 40px;
-}
-
 h1 {
     margin: 0;
     font-size: 36px;
@@ -52,17 +40,23 @@ main {
 .buttonContainer {
     display: flex;
     justify-content: space-between;
+
     // margin-top: 20px;
+    button {
+        border-radius: 50%;
+        margin: 0 10px;
+
+        i {
+            font-size: 2rem;
+        }
+    }
 }
 
-.buttonContainer button {
-    border-radius: 50%;
-    margin: 0 10px;
+// adjusts the padding on the i so that the like and dislike icons are the same width
+.dislike i {
+    padding: 0 5px;
 }
 
-.buttonContainer button i {
-    font-size: 2rem;
-}
 
 .dislike,
 .like {
@@ -84,14 +78,21 @@ main {
     font-size: 24px;
 }
 
+// favourite list section
 .favourites {
-    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-basis: 300px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
     padding: 20px;
+    margin: 20px;
     background-color: #fff;
     text-align: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    flex-basis: 300px;
 }
 
 h2 {
@@ -102,12 +103,13 @@ h2 {
     list-style-type: none;
     padding: 0;
     margin: 0;
+
+    li {
+        margin: 10px 0;
+        font-size: 18px;
+    }
 }
 
-#likedMovies li {
-    margin: 10px 0;
-    font-size: 18px;
-}
 
 /* Footer styles */
 footer {

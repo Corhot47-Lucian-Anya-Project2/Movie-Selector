@@ -16,7 +16,7 @@ const shownMovies = [];
 // Define a function to display a random movie
 function displayRandomMovie() {
   // Call the API to get the list of top rated movies
-  fetch('https://api.themoviedb.org/3/movie/popular?api_key=a86709241fa3002625b118e87d177b48&page=10')
+  fetch('https://api.themoviedb.org/3/movie/popular?api_key=a86709241fa3002625b118e87d177b48&page=500')
     .then(function(response) {
       return response.json();
     })
@@ -46,34 +46,6 @@ function displayRandomMovie() {
       imageContainerEl.innerHTML = '<img src="https://image.tmdb.org/t/p/w500' + randomMovie.poster_path + '" alt="' + randomMovie.title + '">';
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// function displayRandomMovie() {
-  // Call the API to get the list of movies
-//   fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=a86709241fa3002625b118e87d177b48')
-//     .then(response => {
-//       // Convert the response data to JSON
-//       return response.json();
-//     })
-//     .then(data => {
-//       // Get a random movie from the list of movies
-//       const randomIndex = Math.floor(Math.random() * data.results.length);
-//       const randomMovie = data.results[randomIndex];
-//       // Update the movie name and image elements with the new movie data
-//       movieNameEl.textContent = randomMovie.title;
-//       imageContainerEl.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${randomMovie.poster_path}" alt="${randomMovie.title}">`;
-//     });
-// }
 
 // Define an event handler function for the dislike button
 function handleDislikeButtonClick() {

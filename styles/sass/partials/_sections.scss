@@ -1,8 +1,12 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* Main styles */
+main {
+    background-color: #eee;
+    padding: 20px;
+}
+
+header {
+    background-color: $blackShade;
+    padding: 10px;
 }
 
 .flexContainer {
@@ -10,17 +14,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-
-h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
-/* Main styles */
-main {
-    background-color: #eee;
-    padding: 20px;
 }
 
 .movieDisplay {
@@ -56,7 +49,6 @@ main {
 .dislike i {
     padding: 0 5px;
 }
-
 
 .dislike,
 .like {
@@ -95,10 +87,6 @@ main {
     border-radius: 5px;
 }
 
-h2 {
-    margin-top: 0;
-}
-
 #likedMovies {
     list-style-type: none;
     padding: 0;
@@ -110,15 +98,10 @@ h2 {
     }
 }
 
-
 /* Footer styles */
 footer {
     background-color: #222;
-    color: #fff;
+    color: $whiteShade;
     padding: 20px;
     text-align: center;
-}
-
-p {
-    margin: 0;
 }

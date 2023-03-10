@@ -134,15 +134,34 @@ likeButton.addEventListener("click", () => {
 
 // Function to get a non-repeating movie from the MovieDB API
 function getNonRepeatingMovie() {
-  // Keep looping until a non-repeating movie is found
-  return getRandomMovie().then(movie => {
-    while (likedMovies.some(m => m.id === movie.id)) {
+  // Get a random movie
+  return getRandomMovie().then(function(movie) {
+    // Check if the movie already exists in the list of liked movies
+    while (true) {
+      let exists = false;
+
+      // Loop through each movie in the list of liked movies
+      for (let i = 0; i < likedMovies.length; i++) {
+        if (likedMovies[i].id === movie.id) {
+          // If the movie already exists in the list of liked movies, set exists to true and break out of the loop
+          exists = true;
+          break;
+        }
+      }
+
+      // If the movie doesn't exist in the list of liked movies, return it
+      if (!exists) {
+        return movie;
+      }
+
+      // If the movie already exists in the list of liked movies, get another random movie and check again
       movie = getRandomMovie();
     }
-    return movie;
   });
 }
 
 // Display a random movie when the page loads
-getRandomMovie().then(movie => displayMovie(movie));
+getRandomMovie().then(function(movie) {
+  displayMovie(movie);
+});
 

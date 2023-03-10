@@ -13,7 +13,8 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    
 }
 
 .movieDisplay {
@@ -76,9 +77,9 @@ header {
     flex-wrap: wrap;
     flex-direction: column;
     flex-basis: 300px;
-    position: absolute;
-    top: 40px;
-    right: 40px;
+    // position: absolute;
+    // top: 40px;
+    // right: 40px;
     padding: 20px;
     margin: 20px;
     background-color: #fff;

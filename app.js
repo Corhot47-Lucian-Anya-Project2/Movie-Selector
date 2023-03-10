@@ -165,3 +165,5 @@ getRandomMovie().then(function(movie) {
   displayMovie(movie);
 });
 
+// slide out menu code:
+

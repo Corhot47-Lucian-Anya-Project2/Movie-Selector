@@ -20,9 +20,21 @@
         <div class="wrapper">
             <h1>Movie Selector</h1>
         </div>
-            <button id="menuButton">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+        <button id="menuButton">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="slideoutMenu">
+            <div class="favourites">
+                <h3>Liked Movies</h3>
+                <ul id="likedMovies"></ul>
+            </div> <!-- .favourites ends -->
+            <div class="buttonContainer">
+                <button>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
     </header>
     <!-- main section -->
     <main>
@@ -46,11 +58,6 @@
                     </button>
                 </div>
             </section>
-            <!-- favourites list -->
-            <section class="favourites">
-                <h3>Liked Movies</h3>
-                <ul id="likedMovies"></ul>
-            </section> <!-- .favourites ends -->
         </div> <!-- .wrapper ends -->
     </main>
     <!-- footer section -->
@@ -59,7 +66,7 @@
             <p>Created by Anya & Lucian © 2023</p>
         </div>
     </footer>
-<script src="./app.js"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>

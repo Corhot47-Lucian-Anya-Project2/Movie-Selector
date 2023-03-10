@@ -235,8 +235,8 @@ h1, h2, h3, p {
 }
 
 h1 {
-  color: #f0efed;
   text-align: center;
+  color: #f0efed;
   padding: 20px, 0;
   font-size: 2rem;
 }
@@ -281,6 +281,21 @@ main {
 header {
   background-color: #2c2c2c;
   padding: 10px;
+}
+header #menuButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  background-color: #2c2c2c;
+  border: none;
+}
+header #menuButton i {
+  font-size: 2rem;
+  color: #f0efed;
+}
+header #menuButton :hover {
+  color: #ddd;
 }
 
 .flexContainer {

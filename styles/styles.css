@@ -329,7 +329,7 @@ header {
 }
 
 .dislike i {
-  padding: 0 5px;
+  padding: 0 7.5px;
 }
 
 .dislike,
@@ -347,7 +347,7 @@ header {
   background-color: #ddd;
 }
 
-.fa-x,
+.fa-xmark,
 .fa-heart {
   font-size: 24px;
 }

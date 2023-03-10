@@ -344,7 +344,7 @@ header #menuButton :hover {
 }
 
 .dislike i {
-  padding: 0 5px;
+  padding: 0 7.5px;
 }
 
 .dislike,
@@ -362,7 +362,7 @@ header #menuButton :hover {
   background-color: #ddd;
 }
 
-.fa-x,
+.fa-xmark,
 .fa-heart {
   font-size: 24px;
 }

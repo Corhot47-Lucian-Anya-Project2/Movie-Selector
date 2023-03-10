@@ -364,6 +364,9 @@ header {
           flex-direction: column;
   -ms-flex-preferred-size: 300px;
       flex-basis: 300px;
+  position: absolute;
+  top: 85px;
+  right: 40px;
   padding: 20px;
   margin: 20px;
   background-color: #fff;

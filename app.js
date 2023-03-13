@@ -184,11 +184,9 @@ const closeMenuButton = document.getElementById('closeButton');
 // when open menu button is pressed the slide out menu opens
 openMenuButton.addEventListener("click", () => {
   document.getElementById("slideoutMenu").style.width = "300px";
-  document.getElementById("slideoutMenu").style.padding = "20px";
 });
 
 // when close menu button is pressed the slide out menu is closed
 closeMenuButton.addEventListener("click", () => {
   document.getElementById("slideoutMenu").style.width = "0";
-  document.getElementById("slideoutMenu").style.padding = "0";
 });

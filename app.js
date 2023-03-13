@@ -167,26 +167,28 @@ getRandomMovie().then(function(movie) {
 
 // slide out menu code:
 
-// create query selector for button
-// value of true or false to keep track or if button is hidden
-// listen for button click
-// depending on which button is clicked hide or show menu
-
-// value to keep track of whether menu is open or not (by default menu is open)
-let isOpen = true;
-
 // select the open and close menu buttons
 const openMenuButton = document.getElementById('openButton');
 const closeMenuButton = document.getElementById('closeButton');
 
+// // when open menu button is pressed the slide out menu opens
+// openMenuButton.addEventListener("click", () => {
+//   document.getElementById("slideoutMenu").style.display = "flex";
+// });
+
+// // when close menu button is pressed the slide out menu is closed
+// closeMenuButton.addEventListener("click", () => {
+//   document.getElementById("slideoutMenu").style.display = "none";
+// });
+
+// when open menu button is pressed the slide out menu opens
 openMenuButton.addEventListener("click", () => {
-  document.getElementById("slideoutMenu").style.display = "flex";
+  document.getElementById("slideoutMenu").style.width = "300px";
+  document.getElementById("slideoutMenu").style.padding = "20px";
 });
 
+// when close menu button is pressed the slide out menu is closed
 closeMenuButton.addEventListener("click", () => {
-  document.getElementById("slideoutMenu").style.display = "none";
+  document.getElementById("slideoutMenu").style.width = "0";
+  document.getElementById("slideoutMenu").style.padding = "0";
 });
-
-
-// openMenuButton.addEventListener('click', openMenu());
-// closeMenuButton.addEventListener('click', closeMenu());

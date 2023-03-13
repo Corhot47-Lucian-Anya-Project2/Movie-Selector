@@ -173,25 +173,31 @@ getRandomMovie().then(function(movie) {
 // depending on which button is clicked hide or show menu
 
 // value to keep track of whether menu is open or not (by default menu is open)
-// let isOpen = true;
+let isOpen = true;
 
 // select the open and close menu buttons
-const openMenu = document.getElementById('openButton');
-const closeMenu = document.getElementById('closeButton');
+const openMenuButton = document.getElementById('openButton');
+const closeMenuButton = document.getElementById('closeButton');
 
-// openMenu.addEventListener("click", () => {
 
-// });
-
-function close() {
+function closeMenu() {
   document.getElementById("slideoutMenu").style.display = "none";
   console.log(1);
 };
 
-function open() {
+function openMenu() {
   document.getElementById("slideoutMenu").style.display = "flex";
   console.log(2);
 };
 
-openMenu.addEventListener('click', open());
-closeMenu.addEventListener('click', close());
+openMenuButton.addEventListener("click", () => {
+  openMenu();
+});
+
+closeMenuButton.addEventListener("click", () => {
+  closeMenu();
+});
+
+
+// openMenuButton.addEventListener('click', openMenu());
+// closeMenuButton.addEventListener('click', closeMenu());

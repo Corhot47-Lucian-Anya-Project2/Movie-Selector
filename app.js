@@ -179,23 +179,12 @@ let isOpen = true;
 const openMenuButton = document.getElementById('openButton');
 const closeMenuButton = document.getElementById('closeButton');
 
-
-function closeMenu() {
-  document.getElementById("slideoutMenu").style.display = "none";
-  console.log(1);
-};
-
-function openMenu() {
-  document.getElementById("slideoutMenu").style.display = "flex";
-  console.log(2);
-};
-
 openMenuButton.addEventListener("click", () => {
-  openMenu();
+  document.getElementById("slideoutMenu").style.display = "flex";
 });
 
 closeMenuButton.addEventListener("click", () => {
-  closeMenu();
+  document.getElementById("slideoutMenu").style.display = "none";
 });
 
 

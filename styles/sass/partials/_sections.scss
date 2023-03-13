@@ -43,6 +43,24 @@ header {
     .closeMenuButton {
         display: flex;
         justify-content: flex-end;
+
+        button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            margin: 0;
+            border: none;
+
+            i {
+                font-size: 2.5rem;
+                color: $blackShade;
+            }
+
+            :hover {
+                color: #ddd;
+            }
+        }
     }
 }
 

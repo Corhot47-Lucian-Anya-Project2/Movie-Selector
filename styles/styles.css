@@ -325,6 +325,21 @@ header #openButton :hover {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
+.slideoutMenu .closeMenuButton button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  margin: 0;
+  border: none;
+}
+.slideoutMenu .closeMenuButton button i {
+  font-size: 2.5rem;
+  color: #2c2c2c;
+}
+.slideoutMenu .closeMenuButton button :hover {
+  color: #ddd;
+}
 
 .flexContainer {
   display: -webkit-box;

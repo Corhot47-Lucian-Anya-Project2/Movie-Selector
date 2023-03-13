@@ -27,6 +27,7 @@ function displayMovie(movie) {
   document.querySelector(".movieName").textContent = title;
 }
 
+// Function to add movie to liked movies list
 function addLikedMovie(movie) {
   let isDuplicate = false;
   for (let i = 0; i < likedMovies.length; i++) {

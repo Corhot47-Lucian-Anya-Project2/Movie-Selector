@@ -27,9 +27,15 @@ function displayMovie(movie) {
   document.querySelector(".movieName").textContent = title;
 }
 
-// Function to add movie to liked movies list
 function addLikedMovie(movie) {
-  if (likedMovies.length < maxLikedMovies && !likedMovies.some(m => m.title === movie.title)) {
+  let isDuplicate = false;
+  for (let i = 0; i < likedMovies.length; i++) {
+    if (likedMovies[i].title === movie.title) {
+      isDuplicate = true;
+      break;
+    }
+  }
+  if (!isDuplicate && likedMovies.length < maxLikedMovies) {
     likedMovies.push(movie);
     const likedMoviesList = document.querySelector("#likedMovies");
     const listItem = document.createElement("li");
@@ -43,6 +49,7 @@ function addLikedMovie(movie) {
     }
   }
 }
+
 
 // Function to remove movie from suggestions
 function removeMovie() {

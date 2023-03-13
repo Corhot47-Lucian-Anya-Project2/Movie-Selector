@@ -167,3 +167,31 @@ getRandomMovie().then(function(movie) {
 
 // slide out menu code:
 
+// create query selector for button
+// value of true or false to keep track or if button is hidden
+// listen for button click
+// depending on which button is clicked hide or show menu
+
+// value to keep track of whether menu is open or not (by default menu is open)
+// let isOpen = true;
+
+// select the open and close menu buttons
+const openMenu = document.getElementById('openButton');
+const closeMenu = document.getElementById('closeButton');
+
+// openMenu.addEventListener("click", () => {
+
+// });
+
+function close() {
+  document.getElementById("slideoutMenu").style.display = "none";
+  console.log(1);
+};
+
+function open() {
+  document.getElementById("slideoutMenu").style.display = "flex";
+  console.log(2);
+};
+
+openMenu.addEventListener('click', open());
+closeMenu.addEventListener('click', close());

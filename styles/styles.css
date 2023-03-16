@@ -322,6 +322,9 @@ header #openButton :hover {
   padding-top: 20px;
   padding-left: 20px;
 }
+.mySlideoutMenu li {
+  padding-left: 20px;
+}
 .mySlideoutMenu .closeMenuButton {
   display: -webkit-box;
   display: -ms-flexbox;

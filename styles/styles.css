@@ -230,9 +230,24 @@ body {
   color: #2c2c2c;
 }
 
+h1, h2, h3, p {
+  margin: 0;
+}
+
 h1 {
   text-align: center;
+  color: #f0efed;
   padding: 20px, 0;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  padding: 15px 0;
+}
+
+h3 {
+  font-size: 1.4rem;
 }
 
 .wrapper {
@@ -243,6 +258,8 @@ h1 {
 
 body {
   background-color: #f0efed;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -255,17 +272,77 @@ ul {
   margin: 0;
 }
 
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+/* Main styles */
+main {
+  background-color: #eee;
+  padding: 20px;
 }
 
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+header {
+  background-color: #2c2c2c;
+  padding: 10px 0;
+}
+header #openButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  background-color: #2c2c2c;
+  border: none;
+}
+header #openButton i {
+  font-size: 2rem;
+  color: #f0efed;
+}
+header #openButton :hover {
+  color: #ddd;
+}
+
+.mySlideoutMenu {
+  z-index: 20;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+.mySlideoutMenu h3 {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.mySlideoutMenu .closeMenuButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.mySlideoutMenu .closeMenuButton button {
+  background-color: #fff;
+  margin: 0;
+  border: none;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+.mySlideoutMenu .closeMenuButton button i {
+  font-size: 2.5rem;
+  color: #2c2c2c;
+}
+.mySlideoutMenu .closeMenuButton button :hover {
+  color: #5b5b5b;
 }
 
 .flexContainer {
@@ -277,27 +354,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-/* Header styles */
-header {
-  background-color: #222;
-  color: #fff;
-  padding: 20px;
-}
-
-h1 {
-  margin: 0;
-  font-size: 36px;
-}
-
-/* Main styles */
-main {
-  background-color: #eee;
-  padding: 20px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .movieDisplay {
@@ -323,14 +382,16 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-
 .buttonContainer button {
   border-radius: 50%;
   margin: 0 10px;
 }
-
 .buttonContainer button i {
   font-size: 2rem;
+}
+
+.dislike i {
+  padding: 0 7.5px;
 }
 
 .dislike,
@@ -348,33 +409,11 @@ main {
   background-color: #ddd;
 }
 
-.fa-x,
-.fa-heart {
-  font-size: 24px;
-}
-
-.favourites {
-  margin: 20px;
-  padding: 20px;
-  background-color: #fff;
-  text-align: center;
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  -ms-flex-preferred-size: 300px;
-      flex-basis: 300px;
-}
-
-h2 {
-  margin-top: 0;
-}
-
 #likedMovies {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
 #likedMovies li {
   margin: 10px 0;
   font-size: 18px;
@@ -383,11 +422,7 @@ h2 {
 /* Footer styles */
 footer {
   background-color: #222;
-  color: #fff;
+  color: #f0efed;
   padding: 20px;
   text-align: center;
-}
-
-p {
-  margin: 0;
 }

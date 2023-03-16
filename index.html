@@ -20,45 +20,50 @@
         <div class="wrapper">
             <h1>Movie Selector</h1>
         </div>
+        <button id="openButton">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="mySlideoutMenu" id="slideoutMenu">
+            <div class="favourites">
+                <h3>Liked Movies</h3>
+                <ul id="likedMovies"></ul>
+            </div> <!-- .favourites ends -->
+            <div class="closeMenuButton">
+                <button id="closeButton">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
     </header>
+
     <!-- main section -->
     <main>
         <!-- wrapper -->
-        <div class="wrapper">
+        <div class="wrapper flexContainer">
             <!-- image display -->
-            <section class="movieDisplay flexContainer">
+            <section class="movieDisplay">
                 <!-- container to hold the image -->
-                <div class="imageContainer">
-                    <img src="http://placekitten.com/200/300" alt="kitten">
-                </div>
-                <p class="movieName"></p>
-
+                <div class="imageContainer"></div>
+                <h2 class="movieName"></h2>
                 <!-- container to hold the buttons the user clicks -->
                 <div class="buttonContainer">
                     <!-- dislike button -->
                     <button class="dislike">
-                        <i class="fa-solid fa-x"></i>
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
-
-                    <!-- undo button -->
-                    <!-- <button class="undo">
-                        <i class="fa-solid fa-rotate-left"></i>
-                    </button> -->
-
-                    <!-- like button -->
                     <button class="like">
                         <i class="fa-solid fa-heart"></i>
                     </button>
-                </div> <!-- .buttonContainer ends -->
+                </div>
             </section>
             <!-- favourites list -->
-            <section class="favourites flexContainer">
-                <h2>Liked Movies</h2>
-                <ul id='likedMovies'>
-                
-                </ul>
-            </section> <!-- .favourites ends -->
-        </div> <!-- .wrapper ends -->
+            <section class="favourites">
+                <h3>Liked Movies</h3>
+                <ul id="likedMovies"></ul>
+            </section>
+            <!-- .favourites ends -->
+            </div> <!-- .wrapper ends -->
     </main>
     <!-- footer section -->
     <footer>
@@ -66,7 +71,8 @@
             <p>Created by Anya & Lucian © 2023</p>
         </div>
     </footer>
-<script src="./app.js"></script>
+    <script src="./app.js"></script>
 </body>
+
 
 </html>

@@ -79,4 +79,3 @@ likeButton.addEventListener("click", function() {
 // Initial fetch
 fetchMovie();
 
-

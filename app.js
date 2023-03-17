@@ -84,14 +84,14 @@ fetchMovie();
 // slide out menu code:
 
 // select the open and close menu buttons
-const openMenuButton = document.getElementById('openButton');
-const closeMenuButton = document.getElementById('closeButton');
+app.openMenuButton = document.getElementById('openButton');
+app.closeMenuButton = document.getElementById('closeButton');
 
-openMenuButton.addEventListener("click", () => {
+app.openMenuButton.addEventListener("click", () => {
   document.getElementById("slideoutMenu").style.width = "300px";
 });
 
 // when close menu button is pressed the slide out menu is closed
-closeMenuButton.addEventListener("click", () => {
+app.closeMenuButton.addEventListener("click", () => {
   document.getElementById("slideoutMenu").style.width = "0";
 });

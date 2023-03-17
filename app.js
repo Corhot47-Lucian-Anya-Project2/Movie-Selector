@@ -1,3 +1,5 @@
+const app = {};
+
 // Declare global variables
 let likedMovies = []; // Array to hold liked movies
 const maxLikedMovies = 5; // Maximum number of liked movies

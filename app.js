@@ -87,17 +87,6 @@ fetchMovie();
 const openMenuButton = document.getElementById('openButton');
 const closeMenuButton = document.getElementById('closeButton');
 
-// // when open menu button is pressed the slide out menu opens
-// openMenuButton.addEventListener("click", () => {
-//   document.getElementById("slideoutMenu").style.display = "flex";
-// });
-
-// // when close menu button is pressed the slide out menu is closed
-// closeMenuButton.addEventListener("click", () => {
-//   document.getElementById("slideoutMenu").style.display = "none";
-// });
-
-// when open menu button is pressed the slide out menu opens
 openMenuButton.addEventListener("click", () => {
   document.getElementById("slideoutMenu").style.width = "300px";
 });

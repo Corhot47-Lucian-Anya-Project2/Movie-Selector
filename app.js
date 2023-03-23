@@ -87,11 +87,33 @@ fetchMovie();
 app.openMenuButton = document.getElementById('openButton');
 app.closeMenuButton = document.getElementById('closeButton');
 
-app.openMenuButton.addEventListener("click", () => {
-  document.getElementById("slideoutMenu").style.width = "300px";
-});
+let mq = window.matchMedia('(max-width: 700px)');
+if (mq.matches) {
+  app.openMenuButton.addEventListener("click", () => {
+    document.getElementById("slideoutMenu").style.width = "100vw";
+  });
 
-// when close menu button is pressed the slide out menu is closed
-app.closeMenuButton.addEventListener("click", () => {
-  document.getElementById("slideoutMenu").style.width = "0";
-});
+  // when close menu button is pressed the slide out menu is closed
+  app.closeMenuButton.addEventListener("click", () => {
+    document.getElementById("slideoutMenu").style.width = "0";
+  });
+
+} else {
+  app.openMenuButton.addEventListener("click", () => {
+    document.getElementById("slideoutMenu").style.width = "300px";
+  });
+
+  // when close menu button is pressed the slide out menu is closed
+  app.closeMenuButton.addEventListener("click", () => {
+    document.getElementById("slideoutMenu").style.width = "0";
+  });
+}
+
+// app.openMenuButton.addEventListener("click", () => {
+//   document.getElementById("slideoutMenu").style.width = "300px";
+// });
+
+// // when close menu button is pressed the slide out menu is closed
+// app.closeMenuButton.addEventListener("click", () => {
+//   document.getElementById("slideoutMenu").style.width = "0";
+// });

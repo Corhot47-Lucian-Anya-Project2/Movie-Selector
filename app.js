@@ -1,7 +1,6 @@
 // Create a namespace object
 const MovieApp = {
   likedMovies: [],
-  firstLike:true,
   maxLikedMovies: 5,
 
 
@@ -148,20 +147,4 @@ window.addEventListener('resize', function (event) {
 
 app.mediaQuery();
 
-// function to determine menu width
-// app.findWidth = function() {
-//   if (window.innerWidth > 700) {
-//     app.menuWidth = '300px'
-//   } else {
-//     app.menuWidth = '100vh'
-//   }
-// }
 
-
-// function for determining how menu with behave based on window size (call this initally and everytime the window is resize)
-
-// app.configureMenu = function() {
-//   if (this.window.innerWidth > 700) {
-    
-//   }
-// }

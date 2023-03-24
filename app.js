@@ -1,7 +1,6 @@
 // Create a namespace object
 const MovieApp = {
   likedMovies: [],
-  firstLike:true,
   maxLikedMovies: 5,
 
   fetchMovie: function() {
@@ -125,8 +124,6 @@ app.mediaQuery = function () {
   }
 }
 
-<<<<<<< HEAD
-=======
 // what to do when menu resizes
 window.addEventListener('resize', function (event) {
   document.getElementById("slideoutMenu").style.width = "0";
@@ -134,4 +131,3 @@ window.addEventListener('resize', function (event) {
 }, true);
 
 app.mediaQuery();
->>>>>>> 7aee1c91a62ed0a930ca60a030a39f6b909edce1

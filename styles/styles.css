@@ -298,6 +298,10 @@ header .openButton :hover {
   color: #ddd;
 }
 
+#slideoutMenu {
+  width: 0;
+}
+
 .mySlideoutMenu {
   z-index: 20;
   width: 300px;

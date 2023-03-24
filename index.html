@@ -20,7 +20,23 @@
         <div class="wrapper">
             <h1>Movie Selector</h1>
         </div>
+        <button id="openButton" class="openButton">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="mySlideoutMenu" id="slideoutMenu">
+            <div class="favourites">
+                <h3>Liked Movies</h3>
+                <ul id="likedMovies" class="likedMovies"></ul>
+            </div> <!-- .favorites ends -->
+            <div class="closeMenuButton">
+                <button id="closeButton">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
     </header>
+
     <!-- main section -->
     <main>
         <!-- wrapper -->
@@ -34,21 +50,14 @@
                 <div class="buttonContainer">
                     <!-- dislike button -->
                     <button class="dislike">
-                        <i class="fa-solid fa-x"></i>
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                     <button class="like">
                         <i class="fa-solid fa-heart"></i>
                     </button>
                 </div>
             </section>
-            <!-- favourites list -->
-            <section class="favourites">
-                <h3>Liked Movies</h3>
-                <ul id="likedMovies"></ul>
-            </section>
-            <!-- .favourites ends -->
-        </div>
-        <!-- .wrapper ends -->
+        </div> <!-- .wrapper ends -->
     </main>
     <!-- footer section -->
     <footer>

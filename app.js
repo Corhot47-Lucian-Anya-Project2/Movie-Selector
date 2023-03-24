@@ -96,34 +96,15 @@ likeButton.addEventListener("click", function() {
 // Initial fetch
 fetchMovie();
 
-// pseudo code
-/*
-  default menu is closed
-  when user liked their first movie menu opens
-  menu should not open afterwards when they like a movie
-*/
-
-
-
 // slide out menu code:
 
 // select the open and close menu buttons
 app.openMenuButton = document.getElementById('openButton');
 app.closeMenuButton = document.getElementById('closeButton');
 
-// value that keeps track of whether the menu is open or not
-
-app.isOpen = true;
-
-app.menuWidth = 0;
-
-// setting menu to be hidden by default
-document.getElementById("slideoutMenu").style.width = "0";
-
 // function that closes the menu by setting its width to zero
 app.closeMenu = function() {
   document.getElementById("slideoutMenu").style.width = "0";
-  app.isOpen = false;
 }
 
 app.mediaQuery = function () {
@@ -154,7 +135,7 @@ app.mediaQuery = function () {
   }
 }
 
-// what to do when menu resizes
+// closes menu when window resizes
 window.addEventListener('resize', function (event) {
   document.getElementById("slideoutMenu").style.width = "0";
   app.mediaQuery();

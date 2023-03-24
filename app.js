@@ -87,27 +87,67 @@ fetchMovie();
 app.openMenuButton = document.getElementById('openButton');
 app.closeMenuButton = document.getElementById('closeButton');
 
-let mq = window.matchMedia('(max-width: 700px)');
-if (mq.matches) {
-  app.openMenuButton.addEventListener("click", () => {
-    document.getElementById("slideoutMenu").style.width = "100vw";
-  });
+// value that keeps track of whether the menu is open or not
+// 
+app.isOpen = true;
 
-  // when close menu button is pressed the slide out menu is closed
+app.menuWidth = 0;
+
+// function that closes the menu by setting its width to zero
+app.closeMenu = function() {
   app.closeMenuButton.addEventListener("click", () => {
     document.getElementById("slideoutMenu").style.width = "0";
   });
-
-} else {
-  app.openMenuButton.addEventListener("click", () => {
-    document.getElementById("slideoutMenu").style.width = "300px";
-  });
-
-  // when close menu button is pressed the slide out menu is closed
-  app.closeMenuButton.addEventListener("click", () => {
-    document.getElementById("slideoutMenu").style.width = "0";
-  });
+  app.isOpen = false;
 }
+
+app.mediaQuery = function () {
+  let mq = window.matchMedia('(max-width: 700px)');
+  // if screen size is less than 700px
+  if (mq.matches) {
+    app.openMenuButton.addEventListener("click", () => {
+      document.getElementById("slideoutMenu").style.width = "100vw";
+    });
+
+    // when close menu button is pressed the slide out menu is closed
+    app.closeMenu();
+
+    // if screen size is greater than 700px
+  } else {
+    app.openMenuButton.addEventListener("click", () => {
+      document.getElementById("slideoutMenu").style.width = "300px";
+    });
+
+    // when close menu button is pressed the slide out menu is closed
+    app.closeMenu();
+  }
+}
+
+// what to do when menu resizes
+window.addEventListener('resize', function (event) {
+  document.getElementById("slideoutMenu").style.width = "0";
+  app.mediaQuery();
+}, true);
+
+// function to determine menu width
+app.findWidth = function() {
+  if (window.innerWidth > 700) {
+    app.menuWidth = '300px'
+  } else {
+    app.menuWidth = '100vh'
+  }
+}
+
+
+// function for determining how menu with behave based on window size (call this initally and everytime the window is resize)
+
+// app.configureMenu = function() {
+//   if (this.window.innerWidth > 700) {
+    
+//   }
+// }
+
+app.mediaQuery();
 
 // app.openMenuButton.addEventListener("click", () => {
 //   document.getElementById("slideoutMenu").style.width = "300px";

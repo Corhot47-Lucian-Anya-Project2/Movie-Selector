@@ -4,16 +4,35 @@ const MovieApp = {
   firstLike:true,
   maxLikedMovies: 5,
 
-  fetchMovie: function() {
-    const apiKey = "a86709241fa3002625b118e87d177b48";
-    const baseUrl = "https://api.themoviedb.org/3";
-    const page = Math.floor(Math.random() * 500);
-    const url = `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=${page}`;
-    fetch(url)
-      .then(response => response.json())
-      .then(data => this.displayMovie(data.results[0]))
-      .catch(error => console.log(error)); // Handle errors
-  },
+
+MovieApp.likedFirstMovie = false;
+
+MovieApp.openMenuFirst = function () {
+  if (MovieApp.likedFirstMovie == false) {
+    if (window.innerWidth > 700) {
+      document.getElementById("slideoutMenu").style.width = "300px";
+    } else {
+      document.getElementById("slideoutMenu").style.width = "100vw";
+    }
+  }
+  MovieApp.likedFirstMovie = true;
+}
+
+// Declare global variables
+let likedMovies = []; // Array to hold liked movies
+const maxLikedMovies = 5; // Maximum number of liked movies
+
+// Function to fetch movie data from API
+function fetchMovie() {
+  const apiKey = "a86709241fa3002625b118e87d177b48";
+  const baseUrl = "https://api.themoviedb.org/3";
+  const page = Math.floor(Math.random() * 500);
+  const url = `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=${page}`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => displayMovie(data.results[0]))
+    .catch(error => console.log(error)); // Handle errors
+}
 
   displayMovie: function(movie) {
     const imageContainer = document.querySelector(".imageContainer");
@@ -69,9 +88,11 @@ const likeButton = document.querySelector(".like");
 likeButton.addEventListener("click", function() {
   const currentMovie = document.querySelector(".movieName").textContent;
   const movieObj = { title: currentMovie };
+
   MovieApp.addLikedMovie(movieObj);
   MovieApp.removeMovie();
   MovieApp.fetchMovie();
+  MovieApp.openMenuFirst();
 });
 
 
@@ -85,16 +106,10 @@ const app = {};
 app.openMenuButton = document.getElementById('openButton');
 app.closeMenuButton = document.getElementById('closeButton');
 
-// value that keeps track of whether the menu is open or not
-// 
-app.isOpen = true;
-
-app.menuWidth = 0;
 
 // function that closes the menu by setting its width to zero
 app.closeMenu = function() {
   document.getElementById("slideoutMenu").style.width = "0";
-  app.isOpen = false;
 }
 
 app.mediaQuery = function () {
@@ -125,10 +140,28 @@ app.mediaQuery = function () {
   }
 }
 
-// what to do when menu resizes
+// closes menu when window resizes
 window.addEventListener('resize', function (event) {
   document.getElementById("slideoutMenu").style.width = "0";
   app.mediaQuery();
 }, true);
 
 app.mediaQuery();
+
+// function to determine menu width
+// app.findWidth = function() {
+//   if (window.innerWidth > 700) {
+//     app.menuWidth = '300px'
+//   } else {
+//     app.menuWidth = '100vh'
+//   }
+// }
+
+
+// function for determining how menu with behave based on window size (call this initally and everytime the window is resize)
+
+// app.configureMenu = function() {
+//   if (this.window.innerWidth > 700) {
+    
+//   }
+// }

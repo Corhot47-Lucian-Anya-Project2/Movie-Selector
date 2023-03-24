@@ -1,5 +1,18 @@
 const app = {};
 
+app.likedFirstMovie = false;
+
+app.openMenuFirst = function () {
+  if (app.likedFirstMovie == false) {
+    if (window.innerWidth > 700) {
+      document.getElementById("slideoutMenu").style.width = "300px";
+    } else {
+      document.getElementById("slideoutMenu").style.width = "100vw";
+    }
+  }
+  app.likedFirstMovie = true;
+}
+
 // Declare global variables
 let likedMovies = []; // Array to hold liked movies
 const maxLikedMovies = 5; // Maximum number of liked movies
@@ -73,13 +86,24 @@ const likeButton = document.querySelector(".like");
 likeButton.addEventListener("click", function() {
   const currentMovie = document.querySelector(".movieName").textContent;
   const movieObj = { title: currentMovie };
+
   addLikedMovie(movieObj);
   removeMovie();
   fetchMovie();
+  app.openMenuFirst();
 });
 
 // Initial fetch
 fetchMovie();
+
+// pseudo code
+/*
+  default menu is closed
+  when user liked their first movie menu opens
+  menu should not open afterwards when they like a movie
+*/
+
+
 
 // slide out menu code:
 
@@ -88,16 +112,17 @@ app.openMenuButton = document.getElementById('openButton');
 app.closeMenuButton = document.getElementById('closeButton');
 
 // value that keeps track of whether the menu is open or not
-// 
+
 app.isOpen = true;
 
 app.menuWidth = 0;
 
+// setting menu to be hidden by default
+document.getElementById("slideoutMenu").style.width = "0";
+
 // function that closes the menu by setting its width to zero
 app.closeMenu = function() {
-  app.closeMenuButton.addEventListener("click", () => {
-    document.getElementById("slideoutMenu").style.width = "0";
-  });
+  document.getElementById("slideoutMenu").style.width = "0";
   app.isOpen = false;
 }
 
@@ -110,7 +135,10 @@ app.mediaQuery = function () {
     });
 
     // when close menu button is pressed the slide out menu is closed
-    app.closeMenu();
+    app.closeMenuButton.addEventListener("click", () => {
+      app.closeMenu();
+    });
+    
 
     // if screen size is greater than 700px
   } else {
@@ -119,7 +147,10 @@ app.mediaQuery = function () {
     });
 
     // when close menu button is pressed the slide out menu is closed
-    app.closeMenu();
+    app.closeMenuButton.addEventListener("click", () => {
+      app.closeMenu();
+    });
+    
   }
 }
 
@@ -129,14 +160,16 @@ window.addEventListener('resize', function (event) {
   app.mediaQuery();
 }, true);
 
+app.mediaQuery();
+
 // function to determine menu width
-app.findWidth = function() {
-  if (window.innerWidth > 700) {
-    app.menuWidth = '300px'
-  } else {
-    app.menuWidth = '100vh'
-  }
-}
+// app.findWidth = function() {
+//   if (window.innerWidth > 700) {
+//     app.menuWidth = '300px'
+//   } else {
+//     app.menuWidth = '100vh'
+//   }
+// }
 
 
 // function for determining how menu with behave based on window size (call this initally and everytime the window is resize)
@@ -146,14 +179,3 @@ app.findWidth = function() {
     
 //   }
 // }
-
-app.mediaQuery();
-
-// app.openMenuButton.addEventListener("click", () => {
-//   document.getElementById("slideoutMenu").style.width = "300px";
-// });
-
-// // when close menu button is pressed the slide out menu is closed
-// app.closeMenuButton.addEventListener("click", () => {
-//   document.getElementById("slideoutMenu").style.width = "0";
-// });

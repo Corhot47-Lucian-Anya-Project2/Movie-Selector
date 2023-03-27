@@ -1,27 +1,10 @@
+
 // Create a namespace object
 const MovieApp = {
   likedMovies: [],
   maxLikedMovies: 5,
 
-
-MovieApp.likedFirstMovie = false;
-
-MovieApp.openMenuFirst = function () {
-  if (MovieApp.likedFirstMovie == false) {
-    if (window.innerWidth > 700) {
-      document.getElementById("slideoutMenu").style.width = "300px";
-    } else {
-      document.getElementById("slideoutMenu").style.width = "100vw";
-    }
-  }
-  MovieApp.likedFirstMovie = true;
-}
-
-// Declare global variables
-let likedMovies = []; // Array to hold liked movies
-const maxLikedMovies = 5; // Maximum number of liked movies
-
-// Function to fetch movie data from API
+  // Function to fetch movie data from API
 function fetchMovie() {
   const apiKey = "a86709241fa3002625b118e87d177b48";
   const baseUrl = "https://api.themoviedb.org/3";
@@ -146,5 +129,3 @@ window.addEventListener('resize', function (event) {
 }, true);
 
 app.mediaQuery();
-
-

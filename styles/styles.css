@@ -275,7 +275,6 @@ ul {
 /* Main styles */
 main {
   background-color: #eee;
-  padding: 20px;
 }
 
 header {
@@ -296,10 +295,6 @@ header .openButton i {
 }
 header .openButton :hover {
   color: #ddd;
-}
-
-#slideoutMenu {
-  width: 0;
 }
 
 .mySlideoutMenu {
@@ -364,16 +359,20 @@ header .openButton :hover {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
 }
 
 .movieDisplay {
-  margin: 20px;
+  margin: 40px 20px;
   padding: 20px;
   background-color: #fff;
   text-align: center;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  -webkit-transition: margin 0.5s;
+  transition: margin 0.5s;
 }
 
 .imageContainer img {
@@ -398,7 +397,7 @@ header .openButton :hover {
 }
 
 .dislike i {
-  padding: 0 7.5px;
+  padding: 0 5px;
 }
 
 .dislike,
@@ -432,4 +431,24 @@ footer {
   color: #f0efed;
   padding: 20px;
   text-align: center;
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    width: 95%;
+  }
+  .movieDisplay {
+    margin: 20px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
 }

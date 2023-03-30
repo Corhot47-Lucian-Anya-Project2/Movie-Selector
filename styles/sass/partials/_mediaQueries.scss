@@ -18,3 +18,29 @@
 //         margin: 5px 5px;
 //     }
 // }
+
+@media (max-width: 500px) {
+    .wrapper {
+        width: 95%;
+    }
+
+    .movieDisplay {
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+}

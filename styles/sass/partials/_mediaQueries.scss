@@ -5,6 +5,16 @@
     }
 }
 
+@media (max-width: 500px) {
+    .wrapper {
+        width: 95%;
+    }
+
+    .movieDisplay {
+        margin: 20px;
+    }
+}
+
 /* Tablet devices */
 @media (max-width: 760px) {
     .mySlideoutMenu {

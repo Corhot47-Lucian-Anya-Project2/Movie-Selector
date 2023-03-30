@@ -382,33 +382,6 @@ const SlideOutMenu = {
 
   closeMenu: function() {
     document.getElementById("slideoutMenu").style.width = "0";
-
-// Declare global variables
-let likedMovies = []; // Array to hold liked movies
-const maxLikedMovies = 5; // Maximum number of liked movies
-
-// Function to fetch movie data from API
-function fetchMovie() {
-  const apiKey = "a86709241fa3002625b118e87d177b48";
-  const baseUrl = "https://api.themoviedb.org/3";
-  const page = Math.floor(Math.random() * 500);
-  const url = `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=${page}`;
-  fetch(url)
-    .then(response => response.json())
-    .then(data => displayMovie(data.results[0]))
-    .catch(error => console.log(error)); // Handle errors
-},
-
-  displayMovie: function(movie) {
-    const imageContainer = document.querySelector(".imageContainer");
-    const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-    const title = movie.title;
-    const image = document.createElement("img"); // Create an <img> element
-    image.src = posterUrl; // Set the source of the <img> element
-    image.alt = `${title} poster`; // Set the alt text of the <img> element
-    imageContainer.innerHTML = ""; // Clear the contents of the image container
-    imageContainer.appendChild(image); // Add the <img> element to the image container
-    document.querySelector(".movieName").textContent = title;
   },
 
   mediaQuery: function () {

@@ -299,7 +299,6 @@ header .openButton :hover {
 
 .mySlideoutMenu {
   z-index: 20;
-  width: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -433,11 +432,29 @@ footer {
   text-align: center;
 }
 
+/* Mobile devices */
+@media (max-width: 320px) {
+  .mySlideoutMenu {
+    width: 100%;
+  }
+}
 @media (max-width: 500px) {
   .wrapper {
     width: 95%;
   }
   .movieDisplay {
     margin: 20px;
+  }
+}
+/* Tablet devices */
+@media (max-width: 760px) {
+  .mySlideoutMenu {
+    width: 70%;
+  }
+}
+/* Large Desktop devices */
+@media (min-width: 1080px) {
+  .mySlideoutMenu {
+    width: 30%;
   }
 }

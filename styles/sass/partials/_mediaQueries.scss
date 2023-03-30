@@ -1,23 +1,9 @@
-// /* Media query for devices with width 320px */
-// @media screen and (max-width: 320px) {
-//     .mySlideoutMenu {
-//         width: 100%;
-//     }
-
-//     .movieDisplay {
-//         margin: 10px;
-//         padding: 10px;
-//     }
-
-//     .buttonContainer {
-//         flex-wrap: wrap;
-//     }
-
-//     .dislike,
-//     .like {
-//         margin: 5px 5px;
-//     }
-// }
+/* Mobile devices */
+@media (max-width: 320px) {
+    .mySlideoutMenu {
+        width: 100%;
+    }
+}
 
 @media (max-width: 500px) {
     .wrapper {
@@ -26,5 +12,19 @@
 
     .movieDisplay {
         margin: 20px;
+    }
+}
+
+/* Tablet devices */
+@media (max-width: 760px) {
+    .mySlideoutMenu {
+        width: 70%;
+    }
+}
+
+/* Large Desktop devices */
+@media (min-width: 1080px) {
+    .mySlideoutMenu {
+        width: 30%;
     }
 }

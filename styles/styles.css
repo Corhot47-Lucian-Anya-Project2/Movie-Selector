@@ -273,8 +273,38 @@ ul {
 }
 
 /* Main styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 main {
   background-color: #eee;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: auto;
 }
 
 header {
@@ -377,6 +407,9 @@ header .openButton :hover {
 
 .imageContainer img {
   max-width: 100%;
+  max-height: 70vh;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 10px;
 }
 
@@ -433,17 +466,20 @@ footer {
   text-align: center;
 }
 
-/* Mobile devices */
-@media (max-width: 320px) {
-  .mySlideoutMenu {
-    width: 100%;
+.openButton i {
+  font-size: 2rem;
+  /* Default size */
+}
+
+/* For smaller screens */
+@media (max-width: 760px) {
+  .openButton i {
+    font-size: 1.5rem;
   }
 }
-@media (max-width: 500px) {
-  .wrapper {
-    width: 95%;
-  }
-  .movieDisplay {
-    margin: 20px;
+/* For even smaller screens */
+@media (max-width: 320px) {
+  .openButton i {
+    font-size: 1.2rem;
   }
 }

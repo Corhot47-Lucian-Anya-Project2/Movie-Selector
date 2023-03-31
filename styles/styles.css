@@ -297,8 +297,9 @@ header .openButton :hover {
   color: #ddd;
 }
 
-.mySlideoutMenu {
+.mySlideOutMenu {
   z-index: 20;
+  width: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -316,14 +317,14 @@ header .openButton :hover {
   -webkit-transition: width 1s;
   transition: width 1s;
 }
-.mySlideoutMenu h3 {
+.mySlideOutMenu h3 {
   padding-top: 20px;
   padding-left: 20px;
 }
-.mySlideoutMenu li {
+.mySlideOutMenu li {
   padding-left: 20px;
 }
-.mySlideoutMenu .closeMenuButton {
+.mySlideOutMenu .closeMenuButton {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -331,18 +332,18 @@ header .openButton :hover {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-.mySlideoutMenu .closeMenuButton button {
+.mySlideOutMenu .closeMenuButton button {
   background-color: #fff;
   margin: 0;
   border: none;
   padding-top: 10px;
   padding-right: 20px;
 }
-.mySlideoutMenu .closeMenuButton button i {
+.mySlideOutMenu .closeMenuButton button i {
   font-size: 2.5rem;
   color: #2c2c2c;
 }
-.mySlideoutMenu .closeMenuButton button :hover {
+.mySlideOutMenu .closeMenuButton button :hover {
   color: #5b5b5b;
 }
 
@@ -432,29 +433,20 @@ footer {
   text-align: center;
 }
 
-/* Mobile devices */
-@media (max-width: 320px) {
-  .mySlideoutMenu {
-    width: 100%;
-  }
+.openButton i {
+  font-size: 2rem;
+  /* Default size */
 }
-@media (max-width: 500px) {
-  .wrapper {
-    width: 95%;
-  }
-  .movieDisplay {
-    margin: 20px;
-  }
-}
-/* Tablet devices */
+
+/* For smaller screens */
 @media (max-width: 760px) {
-  .mySlideoutMenu {
-    width: 70%;
+  .openButton i {
+    font-size: 1.5rem;
   }
 }
-/* Large Desktop devices */
-@media (min-width: 1080px) {
-  .mySlideoutMenu {
-    width: 30%;
+/* For even smaller screens */
+@media (max-width: 320px) {
+  .openButton i {
+    font-size: 1.2rem;
   }
 }

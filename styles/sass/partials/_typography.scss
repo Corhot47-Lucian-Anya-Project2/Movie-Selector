@@ -3,15 +3,18 @@ html {
     font-size: 125%;
 }
 
+// setting body background color and font size
 body {
     font-family: $bodyFont;
     color: $blackShade;
 }
 
+// removing default margin
 h1, h2, h3, p {
     margin: 0;
 }
 
+// styles for h1, h2 and h3
 h1 {
     text-align: center;
     color: $whiteShade;

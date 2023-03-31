@@ -260,6 +260,7 @@ body {
   background-color: #f0efed;
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
 
 img {
@@ -433,14 +434,8 @@ footer {
   text-align: center;
 }
 
-/* Mobile devices */
-@media (max-width: 320px) {
-  .mySlideoutMenu {
-    width: 100%;
-  }
-}
 @media (max-width: 500px) {
-  .wrapper {
+  .flexContainer {
     width: 95%;
   }
   .movieDisplay {

@@ -1,19 +1,25 @@
+// MovieApp object declaration
 const MovieApp = {};
 
+// Array to store liked movies and maximum liked movies limit
 MovieApp.likedMovies = [];
 MovieApp.maxLikedMovies = 5;
 
+// Function to fetch a random movie from the API
 MovieApp.fetchMovie = function() {
   const apiKey = "a86709241fa3002625b118e87d177b48";
   const baseUrl = "https://api.themoviedb.org/3";
   const page = Math.floor(Math.random() * 500);
   const url = `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=${page}`;
+
+  // Fetch movie data from the API
   fetch(url)
     .then(response => response.json())
     .then(data => this.displayMovie(data.results[0]))
     .catch(error => console.log(error)); // Handle errors
 };
 
+// Function to display movie information on the page
 MovieApp.displayMovie = function(movie) {
   const imageContainer = document.querySelector(".imageContainer");
   const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
@@ -23,10 +29,12 @@ MovieApp.displayMovie = function(movie) {
   image.alt = `${title} poster`; // Set the alt text of the <img> element
   imageContainer.innerHTML = ""; // Clear the contents of the image container
   imageContainer.appendChild(image); // Add the <img> element to the image container
-  document.querySelector(".movieName").textContent = title;
+  document.querySelector(".movieName").textContent = title; // Update the movie title on the page
 };
 
+// Function to add a liked movie to the likedMovies array and display it in the liked movies list
 MovieApp.addLikedMovie = function(movie) {
+  // Check if the movie is already in the likedMovies array
   let isDuplicate = false;
   for (let i = 0; i < this.likedMovies.length; i++) {
     if (this.likedMovies[i].title === movie.title) {
@@ -34,6 +42,8 @@ MovieApp.addLikedMovie = function(movie) {
       break;
     }
   }
+
+  // Add the movie to the likedMovies array and update the liked movies list
   if (!isDuplicate && this.likedMovies.length < this.maxLikedMovies) {
     this.likedMovies.push(movie);
     const likedMoviesList = document.querySelector("#likedMovies");
@@ -41,6 +51,7 @@ MovieApp.addLikedMovie = function(movie) {
     listItem.textContent = movie.title;
     likedMoviesList.appendChild(listItem);
 
+    // Show an alert when the maximum number of liked movies has been reached
     if (this.likedMovies.length === this.maxLikedMovies) {
       alert("You have liked 5 movies. You cannot like any more movies.");
       const likeButton = document.querySelector(".like");
@@ -49,14 +60,17 @@ MovieApp.addLikedMovie = function(movie) {
   }
 };
 
+// Function to remove the current movie from the display
 MovieApp.removeMovie = function() {
   const imageContainer = document.querySelector(".imageContainer");
   imageContainer.innerHTML = "";
   document.querySelector(".movieName").textContent = "";
 };
 
+// Variable to track if the first movie has been liked
 MovieApp.likedFirstMovie = false;
 
+// Function to open the slideout menu for the first time when the first movie is liked
 MovieApp.openMenuFirst = function () {
   if (MovieApp.likedFirstMovie == false) {
     if (window.innerWidth > 700) {
@@ -68,8 +82,8 @@ MovieApp.openMenuFirst = function () {
   MovieApp.likedFirstMovie = true;
 };
 
+// Namespace for utility functions related to MovieApp
 const MovieAppUtils = {
-  // Namespace for utility functions related to MovieApp
   openMenuFirst: function() {
     if (!MovieApp.likedFirstMovie) {
       if (window.innerWidth > 700) {
@@ -82,15 +96,17 @@ const MovieAppUtils = {
   },
 };
 
+// Namespace for slide out menu related functions
 const SlideOutMenu = {
-  // Namespace for slide out menu related functions
   openMenuButton: null,
   closeMenuButton: null,
 
+  // Function to close the slide out menu
   closeMenu: function() {
     document.getElementById("slideoutMenu").style.width = "0";
   },
 
+  // Function to handle media query related functionality for the slide out menu
   mediaQuery: function () {
     let mq = window.matchMedia('(max-width: 700px)');
     // if screen size is less than 700px
@@ -117,8 +133,8 @@ const SlideOutMenu = {
     }
   },
 
+  // Function to initialize slide out menu related functionality
   init: function() {
-    // Initialize slide out menu related functions
     this.openMenuButton = document.getElementById('openButton');
     this.closeMenuButton = document.getElementById('closeButton');
     this.mediaQuery();
@@ -128,6 +144,7 @@ const SlideOutMenu = {
   },
 };
 
+// Initialize the slide out menu
 SlideOutMenu.init();
 
 // Event listener for dislike button
@@ -137,6 +154,7 @@ dislikeButton.addEventListener("click", function() {
   MovieApp.fetchMovie();
 });
 
+// Event listener for the like button
 const likeButton = document.querySelector(".like");
 likeButton.addEventListener("click", function() {
   const currentMovie = document.querySelector(".movieName").textContent;
@@ -145,9 +163,9 @@ likeButton.addEventListener("click", function() {
   MovieApp.removeMovie();
   MovieApp.fetchMovie();
 
-  // Call openMenuFirst function here
+  // Call the openMenuFirst function to open the slide out menu when the first movie is liked
   MovieAppUtils.openMenuFirst();
 });
 
-// Initial fetch
+// Fetch the initial movie
 MovieApp.fetchMovie();

@@ -447,15 +447,3 @@ footer {
     margin: 20px;
   }
 }
-/* Tablet devices */
-@media (max-width: 760px) {
-  .mySlideoutMenu {
-    width: 70%;
-  }
-}
-/* Large Desktop devices */
-@media (min-width: 1080px) {
-  .mySlideoutMenu {
-    width: 30%;
-  }
-}

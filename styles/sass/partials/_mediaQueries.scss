@@ -1,18 +1,9 @@
-.openButton i {
-    font-size: 2rem;
-    /* Default size */
-}
-
-/* For smaller screens */
-@media (max-width: 760px) {
-    .openButton i {
-        font-size: 1.5rem;
+@media (max-width: 500px) {
+    .flexContainer  {
+        width: 95%;
     }
-}
 
-/* For even smaller screens */
-@media (max-width: 320px) {
-    .openButton i {
-        font-size: 1.2rem;
+    .movieDisplay {
+        margin: 20px;
     }
 }

@@ -1,3 +1,4 @@
+// media query to adjust border width on screens smaller than 500px
 @media (max-width: 500px) {
     .flexContainer {
         width: 95%;
@@ -5,5 +6,12 @@
 
     .movieDisplay {
         margin: 20px;
+    }
+}
+
+// media query to adjust border width on screens smaller than 700px
+@media (max-width: 700px) {
+    .flexContainer {
+        width: 90%;
     }
 }

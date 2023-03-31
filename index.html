@@ -17,24 +17,33 @@
 <body>
     <!-- header section -->
     <header>
+        <!-- wrapper around title -->
         <div class="wrapper">
             <h1>Movie Selector</h1>
         </div>
+
+        <!-- open button more slide out menu -->
         <button id="openButton" class="openButton">
             <i class="fa-solid fa-bars"></i>
         </button>
 
+        <!-- slide out menu -->
         <div class="mySlideoutMenu" id="slideoutMenu">
+
+            <!-- container for header and list to allow for flex -->
             <div class="favourites">
                 <h3>Liked Movies</h3>
                 <ul id="likedMovies" class="likedMovies"></ul>
             </div> <!-- .favorites ends -->
+
+            <!-- container for button -->
             <div class="closeMenuButton">
                 <button id="closeButton">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-            </div>
-        </div>
+            </div> <!-- .closeMenuButton ends -->
+
+        </div> <!-- .mySlideoutMenu ends -->
     </header>
 
     <!-- main section -->
@@ -43,30 +52,37 @@
         <div class="wrapper flexContainer">
             <!-- image display -->
             <section class="movieDisplay">
+
                 <!-- container to hold the image -->
                 <div class="imageContainer"></div>
                 <h2 class="movieName"></h2>
+
                 <!-- container to hold the buttons the user clicks -->
                 <div class="buttonContainer">
+
                     <!-- dislike button -->
                     <button class="dislike">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
+
+                    <!-- like button -->
                     <button class="like">
                         <i class="fa-solid fa-heart"></i>
                     </button>
-                </div>
-            </section>
+
+                </div> <!-- .buttonContainer ends -->
+            </section> <!-- .movieDisplay ends -->
         </div> <!-- .wrapper ends -->
     </main>
+
     <!-- footer section -->
     <footer>
+        <!-- wrapper -->
         <div class="wrapper">
             <p>Created by Anya & Lucian © 2023</p>
         </div>
     </footer>
     <script src="./app.js"></script>
 </body>
-
 
 </html>

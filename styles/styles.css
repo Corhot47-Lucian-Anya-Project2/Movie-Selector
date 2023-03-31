@@ -273,7 +273,6 @@ ul {
   margin: 0;
 }
 
-/* Main styles */
 html,
 body {
   margin: 0;
@@ -302,7 +301,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: auto;
@@ -459,7 +457,6 @@ header .openButton :hover {
   font-size: 18px;
 }
 
-/* Footer styles */
 footer {
   background-color: #222;
   color: #f0efed;
@@ -473,5 +470,10 @@ footer {
   }
   .movieDisplay {
     margin: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .flexContainer {
+    width: 90%;
   }
 }
